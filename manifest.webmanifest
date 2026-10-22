@@ -1,0 +1,37 @@
+{
+  "name": "Por Fin Apto · Teórico de conducir",
+  "short_name": "Por Fin Apto",
+  "description": "El método del profe para aprobar el teórico de todos los permisos de conducir: diagnósticos, emboscadas con tus fallos y por qué fallas. App no oficial.",
+  "lang": "es",
+  "dir": "ltr",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F1F3F5",
+  "theme_color": "#0B4EA2",
+  "categories": [
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
