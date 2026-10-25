@@ -181,6 +181,8 @@ main{display:flex;flex-direction:column;gap:16px;padding-block:10px calc(96px + 
 .rules,.traps{margin:12px 0;padding-left:1.1em;display:flex;flex-direction:column;gap:7px;font-size:.95rem}
 .traps{color:var(--muted);margin-top:4px}
 .topic .eyebrow{margin-top:2px}
+.topic-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+a.btn{text-decoration:none;display:inline-flex;align-items:center}
 .tablewrap{overflow-x:auto;margin-top:10px;margin-bottom:12px}
 .ctab{border-collapse:collapse;width:100%;font-size:.9rem}
 .ctab th{text-align:left;font-weight:400;color:var(--muted);padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
@@ -760,7 +762,7 @@ const RAW = [
  "135 cm o menos: SRI y asiento trasero, salvo excepciones."],
 ["seg05","seg",1,"excepcion","¿Cuándo puede un menor de 135 cm o menos viajar en el asiento delantero?",
  ["Si no hay asientos traseros o detrás no caben más sillitas","Nunca: siempre debe viajar en el asiento trasero","Si un adulto le acompaña sentado justo detrás de él"],
- "Esas tres excepciones, y siempre con su SRI."],
+ "Tres excepciones: que el vehículo no tenga asientos traseros, que los traseros ya vayan ocupados por otros menores con su SRI o que detrás no quepan todas las sillitas. Siempre con su SRI y, si va a contramarcha, con el airbag frontal desactivado."],
 ["seg06","seg",1,"excepcion","Lleva un SRI a contramarcha en el asiento delantero. El airbag frontal de ese asiento…",
  ["Debe estar desactivado","Debe estar activado","Da igual si el niño va bien sujeto"],
  "Un airbag que golpea una silla a contramarcha puede matar al bebé."],
@@ -1958,8 +1960,8 @@ const RAW3 = [
  ["Lo más a la izquierda posible","En el centro de la calzada","Pegado a la derecha"],"En sentido único no hay contrario que respetar: arrímate a la izquierda."],
 ["ade23","ade",0,"lectura","¿Cuándo debe poner el intermitente para una maniobra?",
  ["Con antelación, antes de empezarla, y apagarlo al terminar","Cuando ya estoy girando, para no confundir a los que vienen detrás","Solo si hay vehículos detrás que puedan verme"],"Avisar tarde es como no avisar."],
-["ade24","ade",1,"absoluto","¿Puede parar en doble fila?",
- ["No","Sí, menos de 2 minutos","Sí, con las luces de emergencia"],"En doble fila ni se para ni se estaciona. Las luces de emergencia no lo arreglan."],
+["ade24","ade",1,"excepcion","¿Puede estacionar en doble fila un momento, con las luces de emergencia encendidas?",
+ ["No: estacionar en doble fila está prohibido","Sí, si son menos de 10 minutos","Sí, si deja las luces de emergencia puestas"],"Estacionar en doble fila está prohibido, con o sin luces de emergencia. Otra cosa es una parada de menos de 2 minutos sin bajarte del coche y sin obstaculizar."],
 ["ade25","ade",0,"lectura","¿Puede estacionar delante de un vado señalizado?",
  ["No","Sí, si me quedo dentro del coche","Sí, por la noche"],"El vado es un acceso que tiene que estar libre."],
 ["ade26","ade",1,"excepcion","¿Puede parar un momento en el carril bus para que baje un pasajero?",
@@ -1979,7 +1981,7 @@ const RAW3 = [
 ["alc19","alc",1,"cifra","Un conductor general da 0,30 mg/l en aire espirado. ¿Qué sanción le corresponde?",
  ["500 € y 4 puntos","200 € y sin puntos","1.000 € y 6 puntos"],"De 0,25 a 0,50: 500 € y 4 puntos. Por encima de 0,50: 1.000 € y 6 puntos."],
 ["alc20","alc",0,"cifra","Conducir con una tasa superior a 0,50 mg/l en aire espirado supone…",
- ["1.000 € y 6 puntos","500 € y 4 puntos","200 € y 2 puntos"],"Y a partir de 0,60 ya es delito."],
+ ["1.000 € y 6 puntos","500 € y 4 puntos","200 € y 2 puntos"],"Y por encima de 0,60 ya es delito."],
 ["alc21","alc",1,"cifra","Conducir con presencia de drogas en el organismo supone…",
  ["1.000 € y 6 puntos","500 € y 4 puntos","Solo una multa de 200 €"],"Da igual que te encuentres bien: basta con la presencia."],
 ["alc22","alc",0,"intuicion","La fatiga al volante produce…",
@@ -2009,7 +2011,7 @@ const RAW3 = [
 ["vul17","vul",1,"excepcion","Fuera de poblado, ¿por qué lado deben caminar los peatones?",
  ["Por la izquierda, salvo que sea más seguro por la derecha","Siempre por la derecha, en el sentido de la marcha","Por el centro de la calzada, para que les vean"],"Por la izquierda ven de frente a los coches que se les acercan."],
 ["vul18","vul",1,"excepcion","¿Puede un ciclista circular por el arcén de una autovía?",
- ["Sí, si es mayor de 14 años y una señal no lo prohíbe","No: las bicicletas tienen prohibidas las autovías","Sí, a cualquier edad y en cualquier tramo"],"Autovía, sí con condiciones. Autopista, nunca."],
+ ["Sí, desde los 14 años, si una señal no lo prohíbe","No: las bicicletas tienen prohibidas las autovías","Sí, a cualquier edad y en cualquier tramo"],"Autovía, sí, desde los 14 años y salvo señal que lo prohíba. Autopista, nunca."],
 ["vul19","vul",1,"excepcion","¿Pueden circular dos ciclistas en paralelo por una carretera?",
  ["Sí, en columna de a dos, lo más a la derecha posible","No: siempre deben ir en fila de a uno, en cualquier tramo","Sí, ocupando todo el carril si van en grupo"],"En curvas sin visibilidad o con mucho tráfico, en fila de a uno."],
 ["vul20","vul",0,"intuicion","Una persona mayor cruza la calle despacio cuando su semáforo ya parpadea. ¿Qué hace?",
@@ -2411,7 +2413,13 @@ const RAW4 = [
 ["rci18","rci",0,"intuicion","Su remolque ligero no tiene frenos propios. ¿Qué implica?",
  ["La distancia de frenado aumenta: anticipo más","Frena igual que el coche solo, sin remolque","Frena mejor por el peso"],"El coche tiene que parar también la masa del remolque."],
 ["rci19","rci",1,"cifra","Su turismo con caravana mide 12,5 m. ¿Qué debe llevar detrás?",
- ["Placas de vehículo largo","Una luz amarilla giratoria","Nada especial"],"Más de 12 m de conjunto: placas V-6, amarillas con borde rojo.",null,"be"]
+ ["Placas de vehículo largo","Una luz amarilla giratoria","Nada especial"],"Más de 12 m de conjunto: placas V-6, amarillas con borde rojo.",null,"be"],
+
+/* ---------- Reforma del 1 de octubre de 2026 (RD 518/2026) ---------- */
+["moe16","moe",1,"excepcion","Se le avería la moto en una carretera y tiene que bajarse al arcén. ¿Debe ponerse el chaleco reflectante?",
+ ["Sí: desde la reforma de 2026, también en moto","No: en moto solo lo llevan los repartidores","Solo si es de noche o hay poca visibilidad"],"La moto debe llevar chaleco de alta visibilidad, y te lo pones si te bajas y ocupas la calzada o el arcén de una vía interurbana."],
+["seg26","seg",1,"excepcion","En un taxi que circula por ciudad, ¿puede viajar un niño de 120 cm sin sistema de retención infantil?",
+ ["Sí, si va en un asiento trasero","No: ningún menor de 135 cm puede viajar sin SRI","Sí, en cualquier asiento, también delante"],"Es la excepción del taxi en tráfico urbano: menores de 135 cm sin SRI, siempre en un asiento trasero."]
 ];
 
 const QS4 = RAW4.map(r => ({ id:r[0], t:r[1], f:r[2], k:r[3], q:r[4], o:r[5], e:r[6], img:r[7]||null, sc:r[8]||null }));
@@ -3294,6 +3302,18 @@ function whyHTML() {
   h += `<section class="block plan"><div class="bh"><h3>Plan del profe para hoy</h3></div><ol>${steps.map(([t, a]) => `<li><span>${esc(t)}</span><button class="btn ghost sm" data-act="start" data-mode="${a}">Hacer</button></li>`).join("")}</ol></section>`;
   return h + footHTML();
 }
+/* Guía de la web que desarrolla cada tema (solo en la versión web) */
+const GUIDE_OF = {
+  sen: "senales-que-mas-se-fallan", pri: "prioridad-de-paso", vel: "velocidades-maximas", ade: "adelantamientos",
+  alc: "tasas-de-alcohol", vul: "reforma-reglamento-octubre-2026", via: "autopistas-autovias-y-tuneles",
+  luz: "alumbrado-y-senales-acusticas", seg: "cinturon-sillas-infantiles-y-casco", acc: "que-hacer-en-un-accidente",
+  doc: "carnet-por-puntos", amv: "permiso-am-ciclomotor", amc: "permiso-am-ciclomotor", ams: "permiso-am-ciclomotor",
+  mop: "permiso-de-moto-a1-a2", mot: "permiso-de-moto-a1-a2", mof: "permiso-de-moto-a1-a2", moe: "permiso-de-moto-a1-a2", moc: "permiso-de-moto-a1-a2",
+  cpe: "permiso-de-camion-c1-c", dim: "permiso-de-camion-c1-c", cpc: "permiso-de-camion-c1-c", fre: "permiso-de-camion-c1-c",
+  tie: "tiempos-de-conduccion-y-descanso", pro: "tiempos-de-conduccion-y-descanso",
+  dpe: "permiso-de-autobus-d1-d", dpa: "permiso-de-autobus-d1-d", dci: "permiso-de-autobus-d1-d",
+  rpe: "remolques-b-codigo-96-be", rac: "remolques-b-codigo-96-be", rca: "remolques-b-codigo-96-be", rci: "remolques-b-codigo-96-be"
+};
 function topicsHTML() {
   const ts = themeStats();
   const card = t => {
@@ -3302,7 +3322,7 @@ function topicsHTML() {
     return `<details class="topic"><summary><span class="tn">${esc(THEMES[t].n)}</span><span class="pill ${rate == null ? "" : rate >= 25 ? "bad" : rate >= 10 ? "mid" : "good"}">${rate == null ? "sin datos" : rate + " % fallo"}</span></summary>
       <ul class="rules">${c.r.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
       <p class="eyebrow red">Trampas típicas</p><ul class="traps">${c.t.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
-      <button class="btn primary sm" data-act="start" data-mode="tema:${t}">Practicar ${t === "rie" ? "los vídeos" : "10 preguntas"}</button></details>`;
+      <div class="topic-acts"><button class="btn primary sm" data-act="start" data-mode="tema:${t}">Practicar ${t === "rie" ? "los vídeos" : "10 preguntas"}</button>${WEB && GUIDE_OF[t] ? `<a class="btn ghost sm" href="../guia/${GUIDE_OF[t]}.html">Leer la guía</a>` : ""}</div></details>`;
   };
   const E = EXc(), th = E.themes.filter(t => ts[t] && ts[t].n);
   const t1 = th.filter(t => THEMES[t].tier === 1), t2 = th.filter(t => THEMES[t].tier === 2);

@@ -46,7 +46,7 @@ img,svg{max-width:100%}
 .topnav{display:flex;gap:6px;align-items:center}
 .topnav a{font-family:var(--f-display);font-weight:800;font-size:.9rem;text-decoration:none;color:var(--ink);padding:8px 10px;border-radius:8px}
 .topnav a.cta{background:var(--blue);color:var(--card)}
-@media (max-width:420px){.topnav a.hide-sm{display:none}}
+@media (max-width:540px){.topnav a.hide-sm{display:none}}
 
 /* Botones */
 .btn{display:inline-block;border:0;border-radius:10px;padding:13px 18px;font-family:var(--f-display);font-weight:800;font-size:1rem;text-decoration:none;text-align:center;cursor:pointer;line-height:1.2}
@@ -124,6 +124,19 @@ td:last-child{font-variant-numeric:tabular-nums}
 .cta-box p{margin:0;opacity:.92}
 .cta-box .btn{background:var(--plate-ink);color:var(--plate);justify-self:start}
 .related{display:grid;gap:8px;margin-top:8px}
+.more{display:inline-block;margin-top:12px;font-family:var(--f-display);font-weight:800;text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:0;list-style:none}
+.chips a{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-family:var(--f-display);font-weight:800;font-size:.9rem;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--blue)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:0 0 18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi b{display:block;font-family:var(--f-display);font-weight:900;font-size:1.6rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{font-size:.86rem;color:var(--muted)}
+.trap{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:10px;padding:10px 14px;margin:0 0 10px}
+.trap b{font-family:var(--f-display);font-weight:800;display:block;margin-bottom:4px}
+.trap ul{margin:0;padding-left:20px}
+.nf{padding-block:40px 20px;display:grid;gap:14px;justify-items:start}
+.nf .plate404{font-family:var(--f-display);font-weight:900;font-size:clamp(3rem,14vw,5.5rem);line-height:1;background:var(--plate);color:var(--plate-ink);border-radius:12px;padding:8px 20px;letter-spacing:.04em}
 
 /* Anuncios */
 .ad{margin:22px 0;min-height:120px}

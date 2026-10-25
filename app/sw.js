@@ -1,4 +1,4 @@
-const V = "pfa-v3";
+const V = "pfa-v4";
 const ASSETS = ["./", "index.html", "manifest.webmanifest", "../privacidad.html", "../icons/icon-192.png", "../icons/icon-512.png", "../icons/maskable-512.png", "../icons/apple-touch-icon.png", "../fonts/atkinson-hyperlegible-latin-400-normal.woff2", "../fonts/atkinson-hyperlegible-latin-700-normal.woff2", "../fonts/overpass-latin-600-normal.woff2", "../fonts/overpass-latin-800-normal.woff2", "../fonts/overpass-latin-900-normal.woff2", "../fonts/overpass-mono-latin-500-normal.woff2", "../fonts/overpass-mono-latin-700-normal.woff2", "../fonts/kalam-latin-700-normal.woff2"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
