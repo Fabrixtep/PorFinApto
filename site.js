@@ -1,0 +1,1 @@
+document.addEventListener("click",e=>{const b=e.target.closest(".pq-o button");if(!b)return;const q=b.closest(".pq");q.querySelectorAll(".pq-o button").forEach(x=>{x.disabled=true;if(x.dataset.c==="1")x.classList.add("ok")});if(b.dataset.c!=="1")b.classList.add("ko");const d=q.querySelector("details");if(d)d.open=true;});
